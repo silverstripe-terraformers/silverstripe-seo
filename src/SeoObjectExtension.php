@@ -677,12 +677,16 @@ class SeoObjectExtension extends DataExtension
      */
     public function getPageContent()
     {
-        $response = Director::test($this->owner->Link());
+        // TODO: A nicer way to do this, perhaps renderWith()
+        $oldThemes = SSViewer::get_themes();
+        SSViewer::set_themes(SSViewer::config()->get('themes'));
+        $link = Controller::join_links($this->owner->Link(), '?stage=Stage');
+        $response = Director::test($link);
+        SSViewer::set_themes($oldThemes);
 
         if (!$response->isError()) {
             return $response->getBody();
         }
-
         return '';
     }
 }
