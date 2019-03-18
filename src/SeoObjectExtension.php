@@ -2,16 +2,18 @@
 
 namespace Hubertusanton\SilverStripeSeo;
 
-use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\TextareaField;
-use SilverStripe\Forms\LiteralField;
-use SilverStripe\Core\Config\Config;
-use SilverStripe\ORM\DataExtension;
-use SilverStripe\SiteConfig\SiteConfig;
-use SilverStripe\View\Requirements;
-use SilverStripe\Core\Convert;
-use SilverStripe\Control\Director;
 use DOMDocument;
+use SilverStripe\Core\Convert;
+use SilverStripe\View\SSViewer;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Control\Director;
+use SilverStripe\ORM\DataExtension;
+use SilverStripe\View\Requirements;
+use SilverStripe\Control\Controller;
+use SilverStripe\Core\Config\Config;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\SiteConfig\SiteConfig;
 
 /**
  * SeoObjectExtension extends SiteTree with functionality for helping content authors to
